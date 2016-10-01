@@ -54,13 +54,6 @@
 	// Release any cached data, images, etc that aren't in use.
 }
 
-- (void)viewDidUnload {
-	// Release any retained subviews of the main view.
-	// e.g. self.myOutlet = nil;
-	[self.popoverController dismissPopoverAnimated:NO];
-	self.popoverController = nil;
-}
-
 - (IBAction)onButtonClick:(UIButton *)button {
 	
 	if (self.popoverController) {
@@ -77,10 +70,6 @@
 											  animated:YES];
 		[button setTitle:@"Hide Popover" forState:UIControlStateNormal];
 	}
-}
-
-- (void)dealloc {
-	[self viewDidUnload];
 }
 
 @end
