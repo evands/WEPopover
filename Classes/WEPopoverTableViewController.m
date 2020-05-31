@@ -65,20 +65,9 @@
 }
 */
 
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations.
-    //return interfaceOrientation == UIInterfaceOrientationPortrait;
-	return YES;
-}
-
-
-- (void)viewDidUnload {
-	// Release any retained subviews of the main view.
-	// e.g. self.myOutlet = nil;
-	[self.popoverController dismissPopoverAnimated:NO];
-	self.popoverController = nil;
-	[super viewDidUnload];
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationMaskAll;
 }
 
 #pragma mark -
@@ -103,10 +92,10 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
 	
-	cell.textLabel.text = [NSString stringWithFormat:@"Cell %d", indexPath.row];
+	cell.textLabel.text = [NSString stringWithFormat:@"Cell %ld", (long)indexPath.row];
     
     return cell;
 }
@@ -156,7 +145,7 @@
  */
 - (WEPopoverContainerViewProperties *)improvedContainerViewProperties {
 	
-	WEPopoverContainerViewProperties *props = [[WEPopoverContainerViewProperties alloc] autorelease];
+	WEPopoverContainerViewProperties *props = [[WEPopoverContainerViewProperties alloc] init];
 	NSString *bgImageName = nil;
 	CGFloat bgMargin = 0.0;
 	CGFloat bgCapSize = 0.0;
@@ -210,7 +199,7 @@
 		//CGRect rect = CGRectMake(frame.size.width * percentage, frame.origin.y, 1, frame.size.height); 
 		CGRect rect = frame;
 		
-		self.popoverController = [[[popoverClass alloc] initWithContentViewController:contentViewController] autorelease];
+		self.popoverController = [[popoverClass alloc] initWithContentViewController:contentViewController];
 		
 		if ([self.popoverController respondsToSelector:@selector(setContainerViewProperties:)]) {
 			[self.popoverController setContainerViewProperties:[self improvedContainerViewProperties]];
@@ -230,7 +219,6 @@
 											  animated:YES];
 		currentPopoverCellIndex = indexPath.row;
 		
-		[contentViewController release];
 	}
 	
 }
@@ -243,15 +231,14 @@
 	if (!self.popoverController) {
 		
 		UIViewController *contentViewController = [[WEPopoverContentViewController alloc] initWithStyle:UITableViewStylePlain];
-		self.popoverController = [[[popoverClass alloc] initWithContentViewController:contentViewController] autorelease];
+		self.popoverController = [[popoverClass alloc] initWithContentViewController:contentViewController];
 		self.popoverController.delegate = self;
 		self.popoverController.passthroughViews = [NSArray arrayWithObject:self.navigationController.navigationBar];
 		
 		[self.popoverController presentPopoverFromBarButtonItem:sender 
-									   permittedArrowDirections:(UIPopoverArrowDirectionUp|UIPopoverArrowDirectionDown) 
+									   permittedArrowDirections:(UIPopoverArrowDirectionUp) 
 													   animated:YES];
 		 
-		[contentViewController release];
 	} else {
 		[self.popoverController dismissPopoverAnimated:YES];
 		self.popoverController = nil;
@@ -282,9 +269,6 @@
     // Relinquish ownership any cached data, images, etc. that aren't in use.
 }
 
-- (void)dealloc {
-    [super dealloc];
-}
 
 
 @end

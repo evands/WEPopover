@@ -18,7 +18,7 @@
 - (id)initWithStyle:(UITableViewStyle)style {
     // Override initWithStyle: if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
     if ((self = [super initWithStyle:style])) {
-		self.contentSizeForViewInPopover = CGSizeMake(100, 1 * 44 - 1);
+        self.preferredContentSize = CGSizeMake(100, 1 * 44 - 1);
     }
     return self;
 }
@@ -86,11 +86,11 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
     // Configure the cell...
-	cell.textLabel.text = [NSString stringWithFormat:@"Item %d", [indexPath row]]; 
+	cell.textLabel.text = [NSString stringWithFormat:@"Item %ld", (long)[indexPath row]];
 	cell.textLabel.textColor = [UIColor whiteColor];
     return cell;
 }
@@ -121,9 +121,6 @@
 }
 
 
-- (void)dealloc {
-    [super dealloc];
-}
 
 
 @end
