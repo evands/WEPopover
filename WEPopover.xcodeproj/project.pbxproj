@@ -35,7 +35,6 @@
 		74295FBA18BE40C1008612BA /* popoverArrowRight-white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74295FB218BE40C1008612BA /* popoverArrowRight-white@2x.png */; };
 		74295FBC18BE40C1008612BA /* popoverArrowUp-white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74295FB418BE40C1008612BA /* popoverArrowUp-white@2x.png */; };
 		74295FBE18BE47A4008612BA /* popoverBg-white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74295FBD18BE47A4008612BA /* popoverBg-white@2x.png */; };
-		745B478F1C774FB600F2A594 /* CustomPopover.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 745B478E1C774FB600F2A594 /* CustomPopover.xcassets */; };
 		745B47921C7750F800F2A594 /* WEColorUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 745B47911C7750F800F2A594 /* WEColorUtils.m */; };
 		7463500113729C6F000EF936 /* WETouchableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7463500013729C6F000EF936 /* WETouchableView.m */; };
 		7467073219CB18EA00E79E02 /* WEBlockingGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7467073119CB18EA00E79E02 /* WEBlockingGestureRecognizer.m */; };
@@ -85,7 +84,6 @@
 		74295FB218BE40C1008612BA /* popoverArrowRight-white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "popoverArrowRight-white@2x.png"; sourceTree = "<group>"; };
 		74295FB418BE40C1008612BA /* popoverArrowUp-white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "popoverArrowUp-white@2x.png"; sourceTree = "<group>"; };
 		74295FBD18BE47A4008612BA /* popoverBg-white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "popoverBg-white@2x.png"; sourceTree = "<group>"; };
-		745B478E1C774FB600F2A594 /* CustomPopover.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = CustomPopover.xcassets; sourceTree = "<group>"; };
 		745B47901C7750F800F2A594 /* WEColorUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WEColorUtils.h; sourceTree = "<group>"; };
 		745B47911C7750F800F2A594 /* WEColorUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WEColorUtils.m; sourceTree = "<group>"; };
 		74634FFF13729C6F000EF936 /* WETouchableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WETouchableView.h; sourceTree = "<group>"; };
@@ -276,17 +274,8 @@
 				74295FAC18BE401A008612BA /* iOS7 */,
 				7407D7C213A67A7A0074B83C /* Improved */,
 				7407D7C113A67A720074B83C /* Simple */,
-				A83DF9D7421E5C185F48FE83 /* Custom */,
 			);
 			path = Popover;
-			sourceTree = "<group>";
-		};
-		A83DF9D7421E5C185F48FE83 /* Custom */ = {
-			isa = PBXGroup;
-			children = (
-				745B478E1C774FB600F2A594 /* CustomPopover.xcassets */,
-			);
-			path = Custom;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -353,7 +342,6 @@
 				7407D7D713A67ABD0074B83C /* popoverBg@2x.png in Resources */,
 				7407D7D813A67ABD0074B83C /* popoverBg.png in Resources */,
 				7407D7D913A67ABD0074B83C /* popoverArrowUp@2x.png in Resources */,
-				745B478F1C774FB600F2A594 /* CustomPopover.xcassets in Resources */,
 				74295FBA18BE40C1008612BA /* popoverArrowRight-white@2x.png in Resources */,
 				7407D7DA13A67ABD0074B83C /* popoverArrowUp.png in Resources */,
 				74295FBC18BE40C1008612BA /* popoverArrowUp-white@2x.png in Resources */,
